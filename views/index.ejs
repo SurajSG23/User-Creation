@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="/Styles/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="p-4 text-white flex gap-3">
+      <h1 class="font-bold text-3xl">Create Users</h1>
+      <a
+        class="px-2 py-1 border-2 border-blue-200 text-white cursor-pointer bg-blue-700 rounded-lg font-bold text-xl hover:bg-blue-900 transition duration-200"
+        href="/read"
+      >
+        View Users
+      </a>
+    </div>
+    <div class="p-4">
+      <form
+        action="/read"
+        class="p-4 border-2 border-white w-1/4 gap-3 flex flex-col rounded-lg"
+        required
+        method="post"
+      >
+        <input
+          type="text"
+          placeholder="Name"
+          class="border border-white rounded-sm pl-2 text-white h-[40px]"
+          required
+          name="Name"
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          class="border border-white rounded-sm pl-2 text-white h-[40px]"
+          required
+          name="Email"
+        />
+        <input
+          type="text"
+          placeholder="Image URL"
+          class="border border-white rounded-sm pl-2 text-white h-[40px]"
+          name="Image"
+          required
+        />
+        <button type="submit" class="p-3 border-2 border-blue-200 text-white cursor-pointer bg-blue-800 rounded-lg font-bold text-xl hover:bg-blue-900">Submit</button>
+      </form>
+      <script src="/Javascripts/script.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" href="/Styles/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div>
+      <div class="p-4 text-white flex gap-3">
+        <h1 class="font-bold text-3xl">All Users</h1>
+        <a
+          class="px-2 py-1 border-2 border-blue-200 text-white cursor-pointer bg-blue-700 rounded-lg font-bold text-xl hover:bg-blue-900 transition duration-200"
+          href="/"
+        >
+          Back
+        </a>
+      </div>
+      <div class="users flex gap-5 w-full flex-wrap justify-center">
+        <% if(users.length>0 ) {users.map((val)=>{ %>
+        <div
+          class="user min-w-[17vw] p-4 bg-zinc-500 rounded-lg flex flex-col gap-3"
+        >
+          <img
+            class="img w-full h-[25vh] bg-gray-800 rounded-lg bg-cover"
+            src="<%= val.image %>"
+            alt="Profile photo"
+          />
+          <h1 class="text-white bg-transparent text-center text-3xl font-bold">
+            <%= val.name %>
+          </h1>
+          <h1 class="bg-transparent text-center text-blue-100">
+            <%= val.email %>
+          </h1>
+          <div class="bg-transparent flex justify-center gap-3">
+            <a
+              class="px-3 py-2 border-2 border-green-200 text-white cursor-pointer bg-green-700 rounded-lg font-bold text-xl hover:bg-green-900 transition duration-200"
+              href="/edit/<%=val._id%>"
+            >
+              Edit
+            </a>
+            <a
+              class="px-3 py-2 border-2 border-red-200 text-white cursor-pointer bg-red-700 rounded-lg font-bold text-xl hover:bg-red-900 transition duration-200"
+              href="/delete/<%= val._id%>"
+            >
+              Delete
+            </a>
+          </div>
+        </div>
+        <%})%> <%} else {%>
+        <div class="text-white text-center text-2xl font-bold">
+          No users to display
+        </div>
+        <% }%>
+      </div>
+
+      <script src="/Javascripts/script.js"></script>
+    </div>
+  </body>
+</html>
